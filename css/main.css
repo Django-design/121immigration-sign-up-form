@@ -1,0 +1,210 @@
+/*john's reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    }
+    
+    - {
+    margin: 0;
+    }
+    
+    body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    }
+    
+    /* 5. Improve media defaults */
+    img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    }
+    
+    /* 6. Inherit fonts for form controls */
+    input, button, textarea, select {
+    font: inherit;
+    }
+    
+    /* 7. Avoid text overflows */
+    p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    }
+    
+    /* 8. Improve line wrapping */
+    p {
+    text-wrap: pretty;
+    }
+    h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    }
+    
+    /*
+    9. Create a root stacking context
+    */
+    #root, #__next {
+    isolation: isolate;
+    }
+    @font-face {
+        font-family: 'norsebold';
+        src: url('fonts/norse-bold-webfont.woff2') format('woff2'),
+             url('fonts/norse-bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    
+    }
+    :root{
+        --image-height: 100vh;
+        --image-width: 35vw;
+        --form-width: 65vw;
+        --form-head-foot-height: 32.5vh;
+        --form-body-height: 35vh;
+        --form-margin-left: 40px;
+        --font: 'Times New Roman', Times, serif;
+        --secondary-background-color: rgb(241, 239, 239);
+        --main-background-color: rgb(255, 255, 255);
+        --form-margin-bottom: 32px;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-family: var(--font);
+    }
+    
+    
+    .card-container,
+    .card-image{
+        height: var(--image-height);
+        width: var(--image-width);
+    }
+    
+    .card-container{
+        position: relative;
+        
+    }
+    
+    .card-image{
+        position: absolute;
+        z-index: -1;
+    }
+    
+    .logo{
+        height: 5rem;
+        width: auto;
+    }
+    
+    .card-body{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--image-width);
+        height: 100px;
+        background: black;
+        opacity: .6;
+        font-family: 'norsebold';
+        color: white;
+        text-align: center;
+        font-size: 5rem;
+        top: 15rem;
+        gap: 1.5rem;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        height: var(--image-height);
+    }
+    
+    footer,
+    header{
+        height: var(--form-head-foot-height);
+        width: var(--form-width);
+        background-color: var(--secondary-background-color);
+    
+    }
+    
+    footer{
+        z-index: 0;
+    }
+    header{
+        position: relative;
+       
+    }
+    header p{
+        font-weight: 500px;
+        position: absolute; 
+        bottom: 10px; 
+        left: var(--form-margin-left);
+        font-size: 1.5rem;
+    }
+    
+    main{
+        height: var(--form-body-height);
+        width: var(--form-width);
+        background-color: var(--main-background-color);
+        display: flex;
+        flex-direction: column;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1
+       
+    }
+    
+    main ul{
+        display: flex;
+        list-style: none;
+        margin-bottom: var(--form-margin-bottom);
+    }
+    
+    li{
+        margin-right: 30px;
+        
+    }
+    
+    li > label {
+        display: block;
+    }
+    
+    li > input{
+        height: 25px;
+        width: 250px;
+        border-radius: 5px;
+        border: 1px solid #E5E7Eb;
+        outline: none;
+    }
+    
+    input:focus{
+        border: 1px solid rgb(33, 33, 247);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .password input:invalid{
+        border: 1px solid rgb(236, 12, 23);
+    }
+    
+    a{
+        text-decoration: none;
+        color: #596D48;
+    }
+    
+    button{
+        margin-left: var(--form-margin-left);
+        background-color: #596D48;
+        color: white;
+        cursor: pointer;
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        font-family: var(--font);
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    
+    footer > .login{
+        margin: 40px;
+    }
+    footer> .contact{
+        margin: 40px;
+        position: absolute;
+       
+    }
